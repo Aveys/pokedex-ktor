@@ -56,23 +56,21 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
   async function addPokemon(value) {
-    const response = await fetch(`/pokedex/${value}`, {
+    await fetch(`/pokedex/${value}`, {
       method: 'POST',
       credentials: 'include'
     });
-    const res = await response.json();
-    console.log("Pokemon added : "+ res)
+    console.log("Pokemon added : "+ value)
     location.reload()
   }
 
   async function deletePokemon(value) {
-    const response = await fetch(`/pokedex/${value}`, {
+    await fetch(`/pokedex/${value}`, {
       method: 'DELETE',
       credentials: 'include'
     });
-    const res = await response.json();
-    console.log("Pokemon Deleted : "+ res)
-
+    console.log("Pokemon Deleted : "+ value)
+    location.reload()
   }
 
   Array.from(document.getElementsByClassName("pkmn-audio")).forEach((el) => {
