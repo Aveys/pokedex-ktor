@@ -16,10 +16,18 @@ class UserService {
                     username = userSignInDTO.username
                     password = encodePassword(userSignInDTO.password)
                 }
-            Pokedex.new {
-                user = userCreated
-                createdAt = Instant.now()
-            }
+
+            val p =
+                Pokedex.new {
+                    user = userCreated
+                    createdAt = Instant.now()
+                }
+            val newUser =
+                User.new {
+                    username = userSignInDTO.username + '-'
+                    password = encodePassword(userSignInDTO.password)
+                }
+            p.user = newUser
         }
     }
 

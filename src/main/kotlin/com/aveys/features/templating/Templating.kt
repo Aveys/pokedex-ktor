@@ -1,10 +1,9 @@
 package com.aveys.features.templating
 
-import com.aveys.services.PokedexService
+import com.aveys.features.pokedexs.domain.PokedexService
 import com.aveys.utils.user
 import com.github.mustachejava.DefaultMustacheFactory
 import io.ktor.server.application.Application
-import io.ktor.server.application.call
 import io.ktor.server.application.install
 import io.ktor.server.auth.authenticate
 import io.ktor.server.mustache.Mustache
@@ -18,8 +17,8 @@ fun Application.configureTemplating() {
     install(Mustache) {
         mustacheFactory = DefaultMustacheFactory("templates")
     }
+    val pokedexService by inject<PokedexService>()
     routing {
-        val pokedexService by inject<PokedexService>()
         authenticate("auth-session") {
             get("/") {
                 val user = call.user()

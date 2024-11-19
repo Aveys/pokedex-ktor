@@ -40,7 +40,7 @@
           <th scope="row" id="pkmn-{{id}}">{{id}}</th>
           <td>{{name}}</td>
           <td><img src="{{sprite}}" alt="sprite pokemon"/></td>
-          <td><audio controls>
+          <td><audio class="pkmn-audio" controls>
             <source src="{{cries}}" type="audio/ogg">
             Your browser does not support the audio element.
           </audio></td>
@@ -61,6 +61,8 @@
       credentials: 'include'
     });
     const res = await response.json();
+    console.log("Pokemon added : "+ res)
+    location.reload()
   }
 
   async function deletePokemon(value) {
@@ -68,9 +70,14 @@
       method: 'DELETE',
       credentials: 'include'
     });
-    await response.json();
+    const res = await response.json();
+    console.log("Pokemon Deleted : "+ res)
 
   }
+
+  Array.from(document.getElementsByClassName("pkmn-audio")).forEach((el) => {
+    el.volume=0.1
+  })
 
   document.getElementById("button-add").onclick = async () => {
     const value = document.getElementById("input-pokemon").value

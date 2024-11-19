@@ -1,7 +1,8 @@
-package com.aveys.services
+package com.aveys.features.pokedexs.domain
 
 import com.aveys.features.pokedexs.data.Pokedex
 import com.aveys.features.pokedexs.data.Pokedexs
+import com.aveys.features.pokemons.domain.PokemonService
 import com.aveys.features.pokemons.domain.dto.PokemonDTO
 import com.aveys.features.users.domain.UserService
 import com.aveys.features.users.domain.exceptions.UserNotFound

@@ -1,10 +1,9 @@
 package com.aveys.features.pokedexs.routes
 
-import com.aveys.services.PokedexService
+import com.aveys.features.pokedexs.domain.PokedexService
 import com.aveys.utils.user
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
-import io.ktor.server.application.call
 import io.ktor.server.auth.authenticate
 import io.ktor.server.response.respond
 import io.ktor.server.routing.delete
@@ -16,8 +15,8 @@ import io.ktor.server.util.getOrFail
 import org.koin.ktor.ext.inject
 
 fun Application.pokedexRoutes() {
+    val pokedexService by inject<PokedexService>()
     routing {
-        val pokedexService by inject<PokedexService>()
         authenticate("auth-session") {
             route("/pokedex") {
                 get {
