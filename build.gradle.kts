@@ -2,9 +2,9 @@ val kotlinVersion: String by project
 val logbackVersion: String by project
 
 plugins {
-    kotlin("jvm") version "2.0.21"
-    id("io.ktor.plugin") version "3.0.1"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
+    kotlin("jvm") version "2.1.10"
+    id("io.ktor.plugin") version "3.1.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 }
 
 group = "com.aveys"
@@ -42,12 +42,12 @@ dependencies {
     implementation("io.ktor:ktor-client-cio")
     implementation("io.ktor:ktor-client-content-negotiation")
     implementation("io.ktor:ktor-serialization-kotlinx-json")
-    implementation("io.insert-koin:koin-ktor:4.0.1-Beta1")
+    implementation("io.insert-koin:koin-ktor:4.0.2")
     implementation("io.insert-koin:koin-logger-slf4j:3.5.6")
-    implementation("org.jetbrains.exposed:exposed-core:0.56.0")
-    implementation("org.jetbrains.exposed:exposed-dao:0.56.0")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.56.0")
-    implementation("org.jetbrains.exposed:exposed-java-time:0.56.0")
+    implementation("org.jetbrains.exposed:exposed-core:0.59.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.59.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.59.0")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.59.0")
     implementation("org.postgresql:postgresql:42.7.3")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")

@@ -35,7 +35,7 @@ fun Application.module() {
             val usercreated =
                 User.new {
                     username = "arthur"
-                    password = encodePassword("jug")
+                    password = encodePassword("demo")
                 }
             Pokedex.new {
                 user = usercreated

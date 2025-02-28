@@ -23,7 +23,10 @@ class PokedexService(
 
         dbQuery {
             val pokedex = Pokedex.find { Pokedexs.user eq user.id }.first()
-            val newSet = pokedex.pokemon.toMutableSet().also { it.add(pokemon) }
+            val newSet =
+                pokedex.pokemon
+                    .toMutableSet()
+                    .also { it.add(pokemon) }
             pokedex.pokemon = SizedCollection(newSet)
         }
     }

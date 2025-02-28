@@ -1,1 +1,1 @@
-rootProject.name = "pokedex jug"
+rootProject.name = "pokedex-ktor"
